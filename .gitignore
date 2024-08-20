@@ -2,3 +2,6 @@
 /.vscode
 /__pycache__
 /venv
+chat_history.bak
+chat_history.dat
+chat_history.dir
