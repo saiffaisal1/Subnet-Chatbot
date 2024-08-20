@@ -2,7 +2,6 @@ import streamlit as st
 import random
 import time
 import shelve
-import os
 
 st.title("Subnetting Chatbot")
 
