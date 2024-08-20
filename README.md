@@ -1,6 +1,3 @@
-Certainly! Here’s the complete `README.md` file, including all the sections:
-
-```markdown
 # Subnet Calculator with Streamlit
 
 This repository contains a simple Streamlit-based application for subnet calculation, supporting both Fixed-Length Subnet Masking (FLSM) and Variable-Length Subnet Masking (VLSM). The application allows users to input an IP address and subnet requirements to calculate subnets based on their needs.
@@ -87,4 +84,3 @@ Contributions are welcome! Feel free to open an issue or submit a pull request w
 ## Contact
 
 For any questions or feedback, feel free to reach out to [sf9441@rit.edu](mailto:sf9441@rit.edu) or [zas7030@rit.edu](mailto:zas7030@rit.edu).
-```
