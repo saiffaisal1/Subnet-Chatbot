@@ -41,7 +41,7 @@ Ensure you have the following installed:
 4. **Run the application**:
 
    ```bash
-   streamlit run app.py
+   streamlit run Homepage.py
    ```
 
    This will launch the application in your default web browser. You can access it at `http://localhost:8501/`.
@@ -62,20 +62,22 @@ Ensure you have the following installed:
 
 ### Folder Structure
 
-- **`app.py`**: The main Streamlit app script that provides the user interface and handles user input.
+- **`Homepage.py`**: The main Streamlit app script that provides the user interface and handles user input.
+- **`Subnet-Calculator.py`**: A Streamlit page that provides the user with the subnetting calculator.
 - **`subnet_calculator.py`**: Contains the core functions for calculating subnets using FLSM and VLSM.
+- **`Subnet-Chatbot.py`**: A Streamlit page that provides the user with a ChatGPT like UI where they can interact with the AI to learn about subnetting.
 
 ### Adding New Features
 
 1. **Modify `subnet_calculator.py`**:
    - Add new calculation logic or enhance existing functions.
    
-2. **Update `app.py`**:
+2. **Update `Homepage.py`**:
    - Adjust the Streamlit UI to accommodate any changes to the calculation logic.
    - Ensure that new input fields or options are correctly handled and passed to the calculation functions.
 
 3. **Test Your Changes**:
-   - Run the application using `streamlit run app.py` to verify your changes.
+   - Run the application using `streamlit run Homepage.py` to verify your changes.
 
 ### Contributing
 
