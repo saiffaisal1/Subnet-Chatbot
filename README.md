@@ -31,14 +31,15 @@ Ensure you have the following installed:
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
-
-3. **Install dependencies**:
+   Note: Make sure to create the virtual environment on the command prompt terminal and not powershell.
+   
+4. **Install dependencies**:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the application**:
+5. **Run the application**:
 
    ```bash
    streamlit run Homepage.py
