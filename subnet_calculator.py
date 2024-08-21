@@ -22,7 +22,7 @@ def calculate_vlsm_subnets(ip, cidr, host_requirements):
         try:
             subnet = next(network.subnets(new_prefix=new_prefix))
             subnets.append(subnet)
-            network = next(network.address_exclude(subnet)) # type: ignore
+            network = next(network.address_exclude(subnet)) 
         except StopIteration:
             raise ValueError("Not enough space for the requested subnet sizes")
     

@@ -49,4 +49,4 @@ elif subnetting_type == "VLSM":
             st.error(f"Error: {e}")
 
 if __name__ == "__main__":
-    st._main_run_clExplicitRequestIdFlag = None # type: ignore
+    st._main_run_clExplicitRequestIdFlag = None 
