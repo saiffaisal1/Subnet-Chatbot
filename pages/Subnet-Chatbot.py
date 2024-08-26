@@ -15,7 +15,6 @@ def save_chat_history(messages):
     with shelve.open("chat_history") as db:
         db["messages"] = messages
 
-
 # Sidebar with a button to delete chat history
 with st.sidebar:
     if st.button("Delete Chat History"):
@@ -23,7 +22,6 @@ with st.sidebar:
         save_chat_history([])
     if st.button("Save Chat History"):
         save_chat_history(st.session_state.messages)
-
 
 # Loads the chat history after app rerun
 if "messages" not in st.session_state:
@@ -47,7 +45,7 @@ def response_generator():
             case "hello":
                 response = """
                 Hello there! I can explain any Subnetting terms to help you understand better. 
-                Prompts like Subnetting, CIDR, etc works."""
+                Prompts like Subnetting, CIDR, IP Address, VLSM etc works."""
                 yield response
             
             case "Subnetting":
@@ -113,13 +111,9 @@ def response_generator():
                 It defines which part of the address refers to the network and which part refers to the host.""" 
                 yield response
             
-            
-
             case "Bye":
                 response = "Bye! :)"
                 yield response
-
-
 
 if prompt := st.chat_input("Please enter a Subnetting term"):
     # Display user message in chat message container
