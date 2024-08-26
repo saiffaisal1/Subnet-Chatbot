@@ -33,6 +33,7 @@ if subnetting_type == "FLSM":
 elif subnetting_type == "VLSM":
     host_requirements_input = st.text_area("Enter the required number of hosts per subnet (comma-separated):")
     host_requirements = parse_host_requirements(host_requirements_input)
+    host_requirements.sort(reverse=True)
     if st.button("Calculate Subnets"):
         try:
             subnets = calculate_vlsm_subnets(ip_address, cidr, host_requirements)
@@ -41,6 +42,7 @@ elif subnetting_type == "VLSM":
             st.write(f"Subnets for {ip_address}/{cidr}:")
             for idx, subnet in enumerate(subnet_info):
                 st.write(f"Subnet {idx + 1}:")
+                st.write(f"Required Number of hosts: " + str(host_requirements[idx])) # type: ignore
                 st.write(f"Network Address: {subnet['Network']}")
                 st.write(f"Broadcast Address: {subnet['Broadcast']}")
                 st.write(f"Prefix Length: {subnet['Prefix Length']}")
@@ -49,4 +51,4 @@ elif subnetting_type == "VLSM":
             st.error(f"Error: {e}")
 
 if __name__ == "__main__":
-    st._main_run_clExplicitRequestIdFlag = None 
+    st._main_run_clExplicitRequestIdFlag = None  # type: ignore
