@@ -42,7 +42,7 @@ elif subnetting_type == "VLSM":
             st.write(f"Subnets for {ip_address}/{cidr}:")
             for idx, subnet in enumerate(subnet_info):
                 st.write(f"Subnet {idx + 1}:")
-                st.write(f"Required Number of hosts: " + str(host_requirements[idx])) # type: ignore
+                st.write(f"Required Number of hosts: " + str(host_requirements[idx]))
                 st.write(f"Network Address: {subnet['Network']}")
                 st.write(f"Broadcast Address: {subnet['Broadcast']}")
                 st.write(f"Prefix Length: {subnet['Prefix Length']}")
