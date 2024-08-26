@@ -45,7 +45,7 @@ def response_generator():
             case "hello":
                 response = """
                 Hello there! I can explain any Subnetting terms to help you understand better. 
-                Prompts like Subnetting, CIDR, etc works."""
+                Prompts like Subnetting, CIDR, IP Address, VLSM etc works."""
                 yield response
             
             case "Subnetting":
