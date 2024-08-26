@@ -32,22 +32,14 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
+response = """ Hello there! I can explain any Subnetting terms to help you understand better. 
+               Prompts like Subnetting, CIDR, IP Address, VLSM etc works."""
 
+with st.chat_message("assistant"):
+    st.write(response)
 # Streamed response emulator
 def response_generator():
         match prompt:
-            case "hi":
-                response = """
-                Hello there! I can explain any Subnetting terms to help you understand better. 
-                Prompts like Subnetting, CIDR, IP Address, VLSM etc works."""
-                yield response
-
-            case "hello":
-                response = """
-                Hello there! I can explain any Subnetting terms to help you understand better. 
-                Prompts like Subnetting, CIDR, IP Address, VLSM etc works."""
-                yield response
-            
             case "Subnetting":
                 response = """
                 Subnetting is a technique used in computer networking to divide a single network into smaller, manageable sub-networks, or subnets. 
