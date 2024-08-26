@@ -6,7 +6,6 @@ def parse_host_requirements(input_string):
     return [int(hosts) for hosts in host_list if hosts.isdigit()]
 
 def calculate_vlsm_subnets(ip, cidr, host_requirements):
-    host_requirements.sort(reverse=True)
     
     network = ipaddress.ip_network(f"{ip}/{cidr}", strict=False)
     subnets = []
@@ -22,7 +21,7 @@ def calculate_vlsm_subnets(ip, cidr, host_requirements):
         try:
             subnet = next(network.subnets(new_prefix=new_prefix))
             subnets.append(subnet)
-            network = next(network.address_exclude(subnet)) 
+            network = next(network.address_exclude(subnet))  # type: ignore
         except StopIteration:
             raise ValueError("Not enough space for the requested subnet sizes")
     
