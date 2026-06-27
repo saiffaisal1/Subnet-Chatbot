@@ -1,5 +1,53 @@
+import os
 import streamlit as st
-import shelve
+from dotenv import load_dotenv
+from pydantic import BaseModel
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import PydanticOutputParser
+from langchain.agents import create_agent, AgentState
+
+
+
+
+
+load_dotenv()
+
+
+def build_agent():
+    class ResearchResponse(BaseModel):
+        summary: str
+        source: list[str]
+        tools_used : list[str]
+
+    parser = PydanticOutputParser(pydantic_object=PydanticOutputParser)
+
+    llm = ChatOpenAI(
+        model="nvidia/nemotron-3-ultra-550b-a55b:free",
+        openai_api_key=os.environ.get("OPENROUTER_API_KEY"),
+        openai_api_base="https://www.openrouter.ai"
+    )
+
+    prompt = ChatPromptTemplate([
+        (
+            "system",
+            """
+            You are SubnetTutor, an expert teaching assistant for university students 
+            learning computer networking. Your specialty is IP addressing and subnetting, 
+            including Fixed Length Subnet Masking (FLSM) and Variable Length Subnet Masking (VLSM), 
+            CIDR notation, and super netting.
+            Answer the user query and use the necessary tools.
+            Wrap the output in this format and provide no other text\n{format_instructions} 
+            """
+        ),
+        ("placeholder", "{chat_history}"),
+        ("human", "{query}"),
+        ("agent", "{agent_scratchpad}")
+    ]).partial(format_instructions=parser.get_format_instructions())
+
+    agent = create_agent()
+
+
 
 st.title("Subnetting Chatbot")
 st.markdown("Note: This Chatbot is not an AI model and works on given prompts.")
