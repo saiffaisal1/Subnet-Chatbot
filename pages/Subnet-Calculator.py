@@ -2,7 +2,7 @@ import streamlit as st
 from subnet_calculator import calculate_vlsm_subnets, calculate_flsm_subnets, format_subnet_info, parse_host_requirements
 import math
 
-st.title("Subnet Calculator Chatbot")
+st.title("Subnet Calculator")
 st.write("Please enter an IP address and CIDR notation to calculate the subnets.")
 
 ip_address = st.text_input("IP Address", "192.168.1.0")

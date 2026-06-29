@@ -13,7 +13,7 @@ class ResearchResponse(BaseModel):
     source: list[str]
     tools_used: list[str]
 
-st.title("Subnetting Chatbot")
+st.title("Subnet Chatbot")
 st.caption("An expert AI assistant for IP addressing & subnetting")
 
 @st.cache_resource
@@ -27,9 +27,9 @@ def build_agent():
     parser = build_parser()
 
     llm = ChatOpenAI(
-        model="",
-        open_api_key=os.environ.get(""),
-        open_api_base=""
+        model="nvidia/nemotron-3-ultra-550b-a55b:free",
+        openai_api_key=os.environ.get("OPENROUTER_API_KEY"),
+        openai_api_base="https://openrouter.ai/api/v1"
     )
 
     agent = create_agent(
@@ -61,6 +61,7 @@ with st.sidebar:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
+
 
 if query := st.chat_input("Ask me about subnetting, VLSM, CIDR..."):
     st.session_state.messages.append({"role": "user", "content": query})
