@@ -23,7 +23,7 @@ st.title(" Instructions of Use ")
 
 st.markdown(" There are 2 apps dedicated to learning the concepts of Subnetting IP addresses: ")
 st.markdown(" 1. Subnet-Calculator: This app helps you calculate the subnets of any IP address with any given CIDR using VLSM and FLSM. ")
-st.markdown(" 2. Subnet-Chatbot: This app helps you learn the different concepts of Subnetting and its terms using a Chatbot")
+st.markdown(" 2. Subnet-Chatbot: This app helps you learn the different concepts of Subnetting and its terms using an AI Chatbot")
 
 st.title(" More Information ")
 

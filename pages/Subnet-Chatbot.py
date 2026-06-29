@@ -28,7 +28,7 @@ def build_agent():
 
     llm = ChatOpenAI(
         model="nvidia/nemotron-3-ultra-550b-a55b:free",
-        openai_api_key=os.environ.get("OPENROUTER_API_KEY"),
+        openai_api_key=st.secrets["OPENROUTER_API_KEY"],
         openai_api_base="https://openrouter.ai/api/v1"
     )
 
