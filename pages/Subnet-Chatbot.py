@@ -97,4 +97,4 @@ if query := st.chat_input("Ask me about subnetting, VLSM, CIDR..."):
                 response_text = f"Error: {e}"
                 st.error(response_text)
 
-    st.session_state.messages.append({"role": "assistant", "content": response_text})  
+    st.session_state.messages.append({"role": "assistant", "content": response_text}) 
